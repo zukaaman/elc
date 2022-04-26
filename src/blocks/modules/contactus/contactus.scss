@@ -72,6 +72,20 @@
     }
   }
 
+  .thanks-wrapper {
+    grid-column: 4 / 10;
+    padding: 96px 0 136px;
+  }
+
+  .thanks-txt {
+    font-family: $font1;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: -0.96px;
+    color: #BA9774;
+  }
+
   .links-wrapper {
     margin-top: 56px;
     grid-column: 1 / 13;

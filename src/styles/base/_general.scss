@@ -14,9 +14,9 @@ body {
 
   overflow-x: hidden;
 
-  // &.body--freeze {
-  //   overflow: hidden;
-  // }
+  &.body--freeze {
+    overflow: hidden;
+  }
 }
 
 main {
@@ -182,7 +182,7 @@ input[type=number]::-webkit-outer-spin-button {
   &.btn--black {
     color: #F9F9F9;
 
-    background: #161718;
+    background: transparent;
     border: 1px solid rgba(249, 249, 249, 0.4);
   }
 }

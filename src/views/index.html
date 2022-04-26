@@ -39,7 +39,10 @@
       @@include("../blocks/modules/contactus/contactus.html")
     </main>
     @@include("../blocks/modules/footer/footer.html")
+    @@include("../blocks/modules/modal/modal.html")
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js" integrity="sha512-jTgBq4+dMYh73dquskmUFEgMY5mptcbqSw2rmhOZZSJjZbD2wMt0H5nhqWtleVkyBEjmzid5nyERPSNBafG4GQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="js/main.js"></script>
     <script>
       // for resize textarea
@@ -73,6 +76,62 @@
             })
           })
         }
+      });
+    </script>
+    <script>
+      // contacts
+      $(function() {
+        $('.thanks-wrapper').hide();
+
+        $('.contactus-form__btn').click(function() {
+          $('.contactus-form').hide();
+          $('.thanks-wrapper').show();
+
+          setTimeout(function() {
+            $('.contactus-form').show();
+            $('.contactus-form')[0].reset();
+            $('.thanks-wrapper').hide();
+          }, 2000);
+        });
+      });
+
+      // modal
+      $(function() {
+        $('.btn--price').click(function() {
+          $('.modal').addClass('modal--active');
+          $('.modal-overlay').addClass('modal-overlay--active');
+          $('body').addClass('body--freeze');
+        });
+
+        $('.close-btn').click(function() {
+          $('.modal').removeClass('modal--active');
+          $('.modal-overlay').removeClass('modal-overlay--active');
+          $('.modal-form')[0].reset();
+          $('body').removeClass('body--freeze');
+        });
+
+        $('.modal-overlay').click(function() {
+          $('.modal').removeClass('modal--active');
+          $('.modal-overlay').removeClass('modal-overlay--active');
+          $('.modal-form')[0].reset();
+          $('body').removeClass('body--freeze');
+        });
+      });
+
+
+      // header
+      $(window).scroll(function() {
+        var height = $(window).scrollTop();
+        if(height > 1) {
+          $('#header').addClass('header--move');
+        } else {
+          $('#header').removeClass('header--move');
+        }
+      });
+
+      // telmask
+      $(function() {
+        $('input[type="tel"]').inputmask("+44 9999 999999");
       });
     </script>
   </body>

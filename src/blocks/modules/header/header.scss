@@ -6,6 +6,29 @@
 
   width: 100%;
 
+  transition: 0.3s;
+
+  &.header--move {
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12);
+    backdrop-filter: blur(40px);
+
+    .header-logo {
+      flex-direction: row;
+      gap: 16px;
+
+      .header-logo__txt {
+        display: none;
+      }
+
+      .header-logo__txt--scroll {
+        opacity: 1;
+        visibility: visible;
+        transition: 0.3s;
+      }
+    }
+  }
+
   .header-top {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
@@ -99,9 +122,15 @@
     text-decoration: none;
 
     transform: translateX(-50%);
+    transition: 0.3s;
+
+    .header-logo__txt {
+      transition: 0.3s;
+    }
 
     .header-logo__txt--scroll {
-      display: none;
+      opacity: 0;
+      visibility: hidden;
     }
   }
 }
