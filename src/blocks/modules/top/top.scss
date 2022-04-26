@@ -1,0 +1,30 @@
+.top {
+  padding: 248px 0 278px;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url("../img/img2.jpg");
+
+  .top__title {
+    font-family: $font2;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 68px;
+    text-align: center;
+    letter-spacing: -1.96px;
+    text-transform: uppercase;
+    color: #F9F9F9;
+  }
+
+  .top__subtitle {
+    margin-top: 24px;
+
+    font-family: $font1;
+    font-size: 30px;
+    line-height: 38px;
+    text-align: center;
+    letter-spacing: -0.96px;
+    color: #F9F9F9;
+  }
+}
