@@ -141,6 +141,11 @@ input[type=number]::-webkit-outer-spin-button {
   letter-spacing: -0.02em;
   color: #F9F9F9;
 
+  @include m-768 {
+    font-size: 30px;
+    line-height: 38px;
+  }
+
   span {
     font-style: italic;
     color: #BA9774;
@@ -163,7 +168,7 @@ input[type=number]::-webkit-outer-spin-button {
   align-items: center;
   justify-content: center;
 
-  font-family: $font1;
+  font-family: $font2;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
@@ -177,6 +182,12 @@ input[type=number]::-webkit-outer-spin-button {
     color: #161718;
 
     background: #F9F9F9;
+
+    &:hover {
+      color: #FFFFFF;
+
+      background: #BA9774;
+    }
   }
 
   &.btn--black {
@@ -184,6 +195,13 @@ input[type=number]::-webkit-outer-spin-button {
 
     background: transparent;
     border: 1px solid rgba(249, 249, 249, 0.4);
+
+    &:hover {
+      color: #FFFFFF;
+
+      background: #BA9774;
+      border: 1px solid #BA9774;
+    }
   }
 }
 

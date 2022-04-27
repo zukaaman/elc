@@ -8,6 +8,31 @@
 
   transition: 0.3s;
 
+  @include m-768 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  &.header--active {
+    background: #262626 !important;
+
+    .header-bottom {
+      display: block;
+    }
+
+    .header-top {
+      display: block;
+    }
+
+    .burger {
+      background-image: url("../img/close1.svg");
+    }
+  }
+
   &.header--move {
     background: rgba(255, 255, 255, 0.08);
     box-shadow: 0px 8px 18px -6px rgba(24, 39, 75, 0.12);
@@ -16,6 +41,10 @@
     .header-logo {
       flex-direction: row;
       gap: 16px;
+
+      @include m-768 {
+        gap: 10px;
+      }
 
       .header-logo__txt {
         display: none;
@@ -32,6 +61,20 @@
   .header-top {
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 
+    @include m-768 {
+      position: absolute;
+      bottom: calc(-100vh + 82px + 73px);
+      left: 16px;
+      z-index: 10;
+
+      display: none;
+      // height: calc(100vh - 82px);
+
+      border-bottom: none;
+
+      transition: 0.3s;
+    }
+
     .container {
       padding-top: 8px;
       padding-bottom: 8px;
@@ -39,6 +82,13 @@
       justify-content: flex-end;
       align-items: center;
       gap: 16px;
+
+      @include m-768 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        padding: 0;
+      }
     }
 
     .header-top__link {
@@ -55,12 +105,34 @@
       color: rgba(255, 255, 255, 0.6);
       text-decoration: none;
 
+      transition: 0.3s;
+
+      @include m-768 {
+        padding-left: 0;
+
+        font-family: $font1;
+        font-size: 18px;
+        line-height: 28px;
+        color: #BA9774;
+        letter-spacing: 0;
+        text-transform: none;
+        text-align: left;
+      }
+
       &:first-child {
         padding-left: 0;
+
+        @include m-768 {
+          color: #F9F9F9;
+        }
 
         &::before {
           content: none;
         }
+      }
+
+      &:hover {
+        color: rgba(255, 255, 255, 1);
       }
 
       &::before {
@@ -75,11 +147,27 @@
         background-color: rgba(255, 255, 255, 0.08);
 
         transform: translateY(-50%);
+
+        @include m-768 {
+          content: none;
+        }
       }
     }
   }
 
   .header-bottom {
+
+    @include m-768 {
+      position: absolute;
+      top: 73px;
+      left: 0;
+
+      width: 100%;
+      height: 100vh;
+      display: none;
+
+      background: #262626;
+    }
 
     .container {
       padding-top: 16px;
@@ -92,6 +180,13 @@
       align-items: center;
       gap: 32px;
 
+      @include m-768 {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 72px;
+        align-items: flex-start;
+      }
+
       .header-nav__link {
         font-family: $font2;
         font-size: 14px;
@@ -101,6 +196,30 @@
         text-transform: uppercase;
         text-decoration: none;
         color: #ffffff;
+
+        transition: 0,3s;
+
+        @include m-768 {
+          width: 100%;
+          padding-top: 12px;
+
+          font-size: 30px;
+          line-height: 38px;
+          text-transform: none;
+          text-align: left;
+
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+          &:first-child {
+            padding-top: 12px;
+
+            border-top: none;
+          }
+        }
+
+        &:hover {
+          opacity: 0.6;
+        }
 
         &:nth-child(3) {
           margin-right: auto;
@@ -124,13 +243,57 @@
     transform: translateX(-50%);
     transition: 0.3s;
 
+    @include m-768 {
+      position: relative;
+      top: 0;
+      left: 0;
+
+      flex-direction: row;
+      // gap: 16px;
+
+      transform: translateX(0);
+    }
+
+    .header-logo__img {
+
+      @include m-768 {
+        height: 40px;
+      }
+    }
+
     .header-logo__txt {
       transition: 0.3s;
+
+      @include m-768 {
+        display: none;
+      }
     }
 
     .header-logo__txt--scroll {
       opacity: 0;
       visibility: hidden;
+
+      @include m-768 {
+        height: 25px;
+
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .burger {
+    display: none;
+    width: 24px;
+    height: 24px;
+
+    background-image: url("../img/burger.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    @include m-768 {
+      display: block;
     }
   }
 }

@@ -3,12 +3,26 @@
 
   background: #262626;
 
+  @include m-768 {
+    padding: 64px 0 76px;
+  }
+
   .container {
     position: relative;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 0 32px;
+
+    @include m-1392 {
+      display: flex;
+      gap: 32px;
+    }
+
+    @include m-768 {
+      flex-direction: column-reverse;
+      gap: 44px;
+    }
   }
 
   .img-wrapper {
@@ -17,14 +31,68 @@
 
     overflow: hidden;
 
+    @include m-1392 {
+      flex: 1;
+    }
+
+    @include m-768 {
+      flex: none;
+    }
+
+    &.img-wrapper--1 {
+      position: relative;
+
+      @include m-768 {
+        margin: 0 -16px;
+        height: 486px;
+        width: calc(100% + 32px);
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 25px;
+        left: 25px;
+
+        width: 154px;
+        height: 58px;
+
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-image: url("../img/subscribe.svg");
+
+        @include m-768 {
+          bottom: 64px;
+          left: 16px;
+        }
+      }
+    }
+
     &.img-wrapper--2 {
       position: absolute;
       bottom: -273px;
       right: 248px;
+      z-index: 10;
 
       width: 546px;
       height: 406px;
       grid-column: auto;
+
+      @include m-1392 {
+        right: 14%;
+      }
+
+      @include m-992 {
+        right: 16px;
+      }
+
+      @include m-768 {
+        bottom: -140px;
+
+        width: 284px;
+        height: 172px;
+      }
     }
 
     img {
@@ -38,11 +106,32 @@
   .txt-wrapper {
     grid-column: 7 / 12;
     padding-top: 38px;
+
+    @include m-1392 {
+      flex: 1;
+    }
+
+    @include m-992 {
+      padding-top: 24px;
+    }
+
+    @include m-768 {
+      flex: none;
+      padding-top: 0;
+    }
   }
 
   .btns-wrapper {
     margin-top: 48px;
     display: flex;
     gap: 12px;
+
+    @include m-992 {
+      flex-direction: column;
+    }
+
+    @include m-768 {
+      display: none;
+    }
   }
 }

@@ -1,31 +1,101 @@
 .cars {
+  position: relative;
+
   padding: 273px 0 96px;
 
   background: #161718;
+
+  @include m-768 {
+    padding: 128px 0 64px;
+  }
+
+  #cars {
+    position: absolute;
+    top: 136px;
+    left: 0;
+
+    display: block;
+
+    @include m-768 {
+      top: 31px;
+    }
+  }
 
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 0 32px;
+
+    @include m-992 {
+      display: block;
+    }
   }
 
   .txt-wrapper {
     grid-column: 2 / 7;
   }
 
-  .cars-slider {
+  .cars-list {
     grid-column: 1 / 13;
     margin-top: 72px;
-
-    overflow: hidden;
-  }
-
-  .cars-list {
     display: flex;
     justify-content: space-between;
+    gap: 4px;
+
+    @include m-992 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 24px 32px;
+    }
+
+    @include m-768 {
+      margin-top: 57px;
+      grid-gap: 24px 16px;
+    }
+
+    @include m-600 {
+      grid-template-columns: 1fr;
+    }
 
     .cars-list__item {
-      width: 337px;
+      width: 100%;
+      padding-bottom: 54px;
+
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+      transition: 0.6s;
+
+      @include m-992 {
+        padding-bottom: 0;
+
+        border: none;
+      }
+
+      &:hover {
+        padding-bottom: 53px;
+
+        border-bottom: 2px solid #FFFFFF;
+
+        @include m-992 {
+          padding-bottom: 0;
+
+          border: none;
+
+          .img-wrapper {
+
+            img {
+              transform: scale(1);
+            }
+          }
+        }
+
+        .img-wrapper {
+
+          img {
+            transform: scale(1.1);
+          }
+        }
+      }
     }
 
     .img-wrapper {
@@ -35,11 +105,16 @@
 
       overflow: hidden;
 
+      @include m-768 {
+        height: 204px;
+      }
+
       img {
         width: 100%;
         height: 100%;
 
         object-fit: contain;
+        transition: 0.6s;
       }
     }
 
@@ -53,6 +128,13 @@
       letter-spacing: -0.2px;
       text-transform: uppercase;
       color: #F9F9F9;
+
+      @include m-768 {
+        margin-top: 12px;
+
+        font-size: 24px;
+        line-height: 32px;
+      }
     }
 
     .cars-list__brand {

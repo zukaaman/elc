@@ -6,6 +6,12 @@
   background-repeat: no-repeat;
   background-image: url("../img/img2.jpg");
 
+  @include m-768 {
+    padding: 214px 0 55px;
+
+    background-image: url("../img/img9.jpg");
+  }
+
   .top__title {
     font-family: $font2;
     font-size: 50px;
@@ -15,6 +21,12 @@
     letter-spacing: -1.96px;
     text-transform: uppercase;
     color: #F9F9F9;
+
+    @include m-768 {
+      font-size: 32px;
+      line-height: 40px;
+      letter-spacing: -0.02em;
+    }
   }
 
   .top__subtitle {
@@ -26,5 +38,29 @@
     text-align: center;
     letter-spacing: -0.96px;
     color: #F9F9F9;
+
+    @include m-768 {
+      margin-top: 16px;
+    }
+  }
+
+  .btns-wrapper {
+    margin: 24px auto 0;
+    display: none;
+    gap: 12px;
+    width: 66%;
+
+    @include m-768 {
+      display: flex;
+      flex-direction: column;
+    }
+
+    @include m-600 {
+      width: 100%;
+    }
+
+    .btn {
+      font-family: $font1;
+    }
   }
 }

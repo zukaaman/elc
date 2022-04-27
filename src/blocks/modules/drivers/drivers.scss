@@ -3,10 +3,32 @@
 
   background: #262626;
 
+  @include m-768 {
+    padding: 64px 0;
+  }
+
+  @include m-600 {
+    padding-bottom: 0;
+  }
+
   .container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-gap: 0 32px;
+
+    @include m-992 {
+      display: flex;
+      gap: 32px;
+    }
+
+    @include m-768 {
+      grid-gap: 0 16px;
+    }
+
+    @include m-600 {
+      flex-direction: column-reverse;
+      gap: 44px;
+    }
   }
 
   .img-wrapper {
@@ -15,6 +37,20 @@
     height: 394px;
 
     overflow: hidden;
+
+    @include m-992 {
+      flex: 1;
+    }
+
+    @include m-768 {
+      height: 324px;
+    }
+
+    @include m-600 {
+      flex: none;
+      margin: 0 -16px;
+      width: calc(100% + 32px);
+    }
 
     img {
       width: 100%;
@@ -29,5 +65,18 @@
     padding-top: 90px;
     display: flex;
     flex-direction: column;
+
+    @include m-992 {
+      flex: 1;
+    }
+
+    @include m-768 {
+      padding-top: 0;
+      justify-content: center;
+    }
+
+    @include m-600 {
+      flex: none;
+    }
   }
 }
