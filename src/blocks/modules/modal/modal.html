@@ -8,15 +8,15 @@
     </div>
     <div class="input-wrapper">
       <input class="modal-form__input" id="input-price-email" type="email" required>
-      <label class="modal-form__label" for="input-price-email" for="input-price-name">*Your E-mail</label>
+      <label class="modal-form__label" for="input-price-email">*Your E-mail</label>
     </div>
     <div class="input-wrapper">
       <input class="modal-form__input" id="input-price-tel" type="tel" required>
-      <label class="modal-form__label" for="input-price-tel" for="input-price-tel">*Phone Number</label>
+      <label class="modal-form__label" for="input-price-tel">*Phone Number</label>
     </div>
     <div class="input-wrapper">
       <input class="modal-form__input" id="input-price-company" type="text" required>
-      <label class="modal-form__label" for="input-price-company" for="input-price-name">Company Name</label>
+      <label class="modal-form__label" for="input-price-company">Company Name</label>
     </div>
     <button class="modal-form__btn  btn  btn--black">SEND REQUEST</button>
   </form>
@@ -26,9 +26,9 @@
   <h2 class="modal__title">Make a booking</h2>
   <form class="modal-form  modal-form--booking">
     <ul class="steps-list">
-      <li class="steps-list__item  steps-list__item--active">1. Journey details</li>
-      <li class="steps-list__item">2. Choose your service</li>
-      <li class="steps-list__item">3. Passenger details</li>
+      <li class="steps-list__item  steps-list__item--one  steps-list__item--active">1. Journey details</li>
+      <li class="steps-list__item  steps-list__item--two">2. Choose your service</li>
+      <li class="steps-list__item  steps-list__item--three">3. Passenger details</li>
     </ul>
     <div class="step  step--one  step--active">
       <label class="modal-form__label  modal-form__label--booking">PICK UP
@@ -84,7 +84,7 @@
       </label>
       <div class="btns-wrapper">
         <button class="back-btn  btn  btn--white" type="button">back</button>
-        <button class="next-btn  btn  btn--black">Send</button>
+        <button class="next-btn  btn  btn--black" type="button">Send</button>
       </div>
     </div>
   </form>
@@ -93,6 +93,6 @@
   <button class="close-btn"></button>
   <h2 class="modal__title">Request Prices</h2>
   <p class="modal__txt">Thank you for your request. Our manager will be in touch with you shortly</p>
-  <button class="modal__btn  btn  btn--black">Close</button>
+  <button class="modal__btn  modal__btn--close  btn  btn--black">Close</button>
 </section>
 <div class="modal-overlay"></div>

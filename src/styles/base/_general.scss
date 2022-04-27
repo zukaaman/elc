@@ -10,17 +10,11 @@ body {
   font-weight: 400;
   color: #FFFFFF;
 
-  // background-color: #f7f8fa;
-
   overflow-x: hidden;
 
   &.body--freeze {
     overflow: hidden;
   }
-}
-
-main {
-  // overflow-x: hidden;
 }
 
 img {
